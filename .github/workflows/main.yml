@@ -36,22 +36,3 @@ jobs:
         push: true
         tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
-    - name: Install Azure CLI
-      run: |
-        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-    - name: Login to Azure
-      run: |
-        echo "AZURE_PASSWORD=${{ secrets.AZURE_PASSWORD }}" > .env
-        az login -u ${{ secrets.AZURE_USERNAME }} --password @.env
-        rm .env
-
-    - name: Get AKS Credentials
-      run: |
-        az aks get-credentials --resource-group ${{ env.RESOURCE_GROUP }} --name ${{ env.AKS_CLUSTER_NAME }} --overwrite-existing
-
-    - name: Deploy to AKS
-      run: |
-        kubectl apply -f deployment.yml
-        kubectl apply -f service.yml
-
