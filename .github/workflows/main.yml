@@ -2,15 +2,15 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ master ]  # or any other branch you want to trigger on
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
 env:
-  REGISTRY: mycontainerazure1974.azurecr.io  # Your Azure Container Registry
-  IMAGE_NAME: webapplication1  # Replace with your image name
-  RESOURCE_GROUP: myRG  # Replace with your Azure Resource Group name
-  AKS_CLUSTER_NAME: mydotnet8webapiakscluster  # Replace with your AKS Cluster name
+  REGISTRY: mycontainerazure1974.azurecr.io
+  IMAGE_NAME: webapplication1
+  RESOURCE_GROUP: myRG
+  AKS_CLUSTER_NAME: mydotnet8webapiakscluster
 
 jobs:
   build_and_push:
@@ -25,30 +25,33 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: ${{ env.REGISTRY }}
-        username: ${{ secrets.AZURE_REGISTRY_USERNAME }}  # Set in GitHub secrets
-        password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}  # Set in GitHub secrets
+        username: ${{ secrets.AZURE_REGISTRY_USERNAME }}
+        password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
 
     - name: Build and Push Image
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./Dockerfile  # Path to your Dockerfile
+        file: ./Dockerfile
         push: true
-        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest        
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+
     - name: Install Azure CLI
       run: |
         curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-    
+
+    - name: Login to Azure
+      run: |
+        echo "AZURE_PASSWORD=${{ secrets.AZURE_PASSWORD }}" > .env
+        az login -u ${{ secrets.AZURE_USERNAME }} --password @.env
+        rm .env
+
     - name: Get AKS Credentials
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-          az aks get-credentials --resource-group ${{ env.RESOURCE_GROUP }} --name ${{ env.AKS_CLUSTER_NAME }} --overwrite-existing
+      run: |
+        az aks get-credentials --resource-group ${{ env.RESOURCE_GROUP }} --name ${{ env.AKS_CLUSTER_NAME }} --overwrite-existing
 
     - name: Deploy to AKS
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-          kubectl apply -f deployment.yml
-          kubectl apply -f service.yml
+      run: |
+        kubectl apply -f deployment.yml
+        kubectl apply -f service.yml
 
