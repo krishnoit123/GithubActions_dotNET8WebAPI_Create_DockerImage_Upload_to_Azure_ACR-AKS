@@ -253,7 +253,7 @@ We have to add the following source code to our **main.yml** file given in secti
 
 The resulting main.yml file would be:
 
-```
+```yaml
 name: Build and Push Docker Image
 
 on:
