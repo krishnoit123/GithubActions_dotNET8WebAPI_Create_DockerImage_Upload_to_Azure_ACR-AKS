@@ -2,7 +2,9 @@
 
 ## 1. Create a .NET 8 Web API in Visual Studio Community Edition
 
-Do not forget to Enable Docker support for automatically create the Dockerfile when creating the application
+Do not forget to Enable Docker support for automatically create the **Dockerfile** when creating the application
+
+**Dockerfile**
 
 ```dockerfile
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
@@ -32,7 +34,7 @@ COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "WebApplication1.dll"]
 ```
 
-Do not forget to add the Kubernetes manifest files in your application: deployment.yml and service.yml 
+Do not forget to add the Kubernetes manifest files in your application: **deployment.yml** and **service.yml** 
 
 **deployment.yml**
 
