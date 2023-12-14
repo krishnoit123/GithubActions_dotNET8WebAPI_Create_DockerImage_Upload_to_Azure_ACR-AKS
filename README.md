@@ -94,7 +94,19 @@ We copy the username and the password to store both values in Gihub repository s
 
 ## 4. Create the Github repository secrets
 
+We nagivate to the Setting menu option in our Github repository
 
+We select Settings->Secrets and variables->Actions->New repository secret and we create the secrets for storing the Azure ACR username and password
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/61703f61-08b0-4249-8dc4-1af251b797a4)
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/4d5ec931-4914-447a-acc2-44e4f7b470fe)
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/f572a38e-f267-48f1-99bf-b9ac2950dbae)
+
+These are the two secrets stored in Github
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/b7a88367-755e-4d98-a428-fb6ccb1a00e2)
 
 ## 4. Create the Github Actions Workflow
 
