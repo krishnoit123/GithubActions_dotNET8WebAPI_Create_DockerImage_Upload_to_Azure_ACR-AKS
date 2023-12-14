@@ -197,7 +197,7 @@ In the Terminal window we confirm we are in the folder where are located the Kub
 
 Then we open in another window Azure Portal and navigate to Azure AKS service and select the **Overview->Connect** menu option
 
-![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/3257a09f-61ec-48d5-8b62-d93668d3e99e)
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/a71c04df-ad5a-4c07-9cba-d84ce8fe08d3)
 
 Then we copy the commands and login in our Azure AKS:
 
@@ -209,7 +209,23 @@ az account set --subscription XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 az aks get-credentials --resource-group myRG --name mydotnet8webapiakscluster
 ```
 
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/11179677-6898-4c4d-b071-d7e6c9d6fe62)
 
+Now we apply the deployment to our AKS Cluster 
+
+```
+kubectl apply -f deployment.yml
+```
+
+```
+kubectl apply -f service.yml
+```
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/4e1e3ee7-dbe2-4a9f-8c70-4939c74adfc8)
+
+We can see the Load Balancer is exposing the port 80 and the **external IP address is 20.199.6.236**
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/d9716635-f06a-4c77-ad32-9ca5d70ed1c8)
 
 
 ## 7. Verify the application endpoints
