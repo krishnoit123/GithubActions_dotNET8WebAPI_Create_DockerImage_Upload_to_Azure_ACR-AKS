@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: mycontainerazure1974.azurecr.io  # Your Azure Container Registry
-  IMAGE_NAME: my-dotnet-api  # Replace with your image name
+  IMAGE_NAME: webapplication1  # Replace with your image name
 
 jobs:
   build_and_push:
