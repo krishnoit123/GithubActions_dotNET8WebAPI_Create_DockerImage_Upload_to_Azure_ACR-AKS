@@ -227,21 +227,11 @@ We can see the Load Balancer is exposing the port 80 and the **external IP addre
 
 ![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/d9716635-f06a-4c77-ad32-9ca5d70ed1c8)
 
+We can also confirm in Azure Portal the Load Balancer external IP
 
-## 7. Verify the application endpoints
+Navigate to the AKS and select the menu option **Services and Ingresses**  
 
-
-
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/37a605bf-c4df-4523-92f1-70fa1939ab4d)
 
 
 
