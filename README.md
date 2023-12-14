@@ -86,7 +86,13 @@ Then we create the new Azure Container Registry ACR named "mycontainerazure1974"
 az acr create --name mycontainerazure1974 --resource-group myRG --sku Basic --location francecentral
 ```
 
+We set Admin User in our new Azure ACR
 
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/3f050394-d530-4cac-a5c1-dda0867d115a)
+
+We copy the username and the password to store both values in Gihub repository secrets.
+
+## 4. Create the Github repository secrets
 
 
 
