@@ -9,6 +9,8 @@ on:
 env:
   REGISTRY: mycontainerazure1974.azurecr.io  # Your Azure Container Registry
   IMAGE_NAME: webapplication1  # Replace with your image name
+  RESOURCE_GROUP: myRG  # Replace with your Azure Resource Group name
+  AKS_CLUSTER_NAME: mydotnet8webapiakscluster  # Replace with your AKS Cluster name
 
 jobs:
   build_and_push:
