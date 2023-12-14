@@ -167,12 +167,29 @@ We select the Metrics option and we confirm we uploaded the docker image a few s
 
 ![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/4342fd4c-a2ed-4891-a72b-987b95b78a67)
 
+## 6. Deploy your application docker image in Azure Kubernetes AKS
+
+We create a new Azure Kubernetes Cluster AKS with the following Azure CLI command:
+
+``
+az aks create --resource-group myRG --name mydotnet8webapiakscluster --location francecentral --node-count 1 --generate-ssh-keys
+``
+
+Then we attach my Container Registry ACR (called "mycontainerazure1974") to my Kubernetes Cluster AKS (called "mydotnet8webapiakscluster") 
+
+```
+az aks update -n mydotnet8webapiakscluster -g myRG --attach-acr mycontainerazure1974
+```
+
+In I did not find any permission proble running the "az aks update" command.
+
+If you don't have the necessary permissions, you might need to ask your Azure administrator to grant you the required roles. 
+
+For instance, being assigned the "**Contributor**" role at the resource group or resource level would typically suffice for these operations.
 
 
-## 5. Deploy your application docker image in Azure Kubernetes AKS
 
-
-## 6. Verify the application endpoints
+## 7. Verify the application endpoints
 
 
 
