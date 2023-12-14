@@ -110,6 +110,54 @@ These are the two secrets stored in Github
 
 ## 4. Create the Github Actions Workflow
 
+We input the workflow main.yml file source code 
+
+```yaml
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [ master ]  # or any other branch you want to trigger on
+  pull_request:
+    branches: [ master ]
+
+env:
+  REGISTRY: mycontainerazure1974.azurecr.io  # Your Azure Container Registry
+  IMAGE_NAME: my-dotnet-api  # Replace with your image name
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Login to Azure Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ secrets.AZURE_REGISTRY_USERNAME }}  # Set in GitHub secrets
+        password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}  # Set in GitHub secrets
+
+    - name: Build and Push Image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        file: ./Dockerfile  # Path to your Dockerfile
+        push: true
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+
+    # Additional steps for deployment or other actions can be added here.
+```
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/7e0ef95a-f1c0-4619-8da1-336277632607)
+
+We verify the workflow is running ok
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/0b31b30f-a818-4868-9508-639f923b2fdf)
+
 
 ## 5. Deploy your application docker image in Azure Kubernetes AKS
 
