@@ -159,6 +159,16 @@ We verify the workflow is running ok
 ![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/0b31b30f-a818-4868-9508-639f923b2fdf)
 
 
+## 5. Verify in Azure Portal the docker image uploaded to Azure ACR
+
+We log in Azure Portal and navigate to our new Azure ACR.
+
+We select the Metrics option and we confirm we uploaded the docker image a few seconds ago
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/4342fd4c-a2ed-4891-a72b-987b95b78a67)
+
+
+
 ## 5. Deploy your application docker image in Azure Kubernetes AKS
 
 
