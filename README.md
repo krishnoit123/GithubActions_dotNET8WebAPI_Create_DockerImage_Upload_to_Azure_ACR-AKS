@@ -110,7 +110,7 @@ These are the two secrets stored in Github
 
 ## 4. Create the Github Actions Workflow
 
-We input the workflow main.yml file source code 
+We input the workflow **main.yml** file source code 
 
 ```yaml
 name: Build and Push Docker Image
@@ -233,7 +233,77 @@ Navigate to the AKS and select the menu option **Services and Ingresses**
 
 ![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/37a605bf-c4df-4523-92f1-70fa1939ab4d)
 
+## 7. Automate the deployment of your Docker container to an Azure Kubernetes Service (AKS) cluster using GitHub Actions
 
+We have to add the following source code to our **main.yml** file given in section 4. in this document:
+
+```yaml
+- name: Install Azure CLI
+      uses: azure/CLI@v1
+
+    - name: Get AKS Credentials
+      run: |
+        az aks get-credentials --resource-group ${{ env.RESOURCE_GROUP }} --name ${{ env.AKS_CLUSTER_NAME }} --overwrite-existing
+
+    - name: Deploy to AKS
+      run: |
+        kubectl apply -f deployment.yml
+        kubectl apply -f service.yml
+```
+
+The resulting main.yml file would be:
+
+```
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  REGISTRY: mycontainerazure1974.azurecr.io
+  IMAGE_NAME: webapplication1
+  RESOURCE_GROUP: myRG  # Replace with your Azure Resource Group name
+  AKS_CLUSTER_NAME: mydotnet8webapiakscluster  # Replace with your AKS Cluster name
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Login to Azure Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ secrets.AZURE_REGISTRY_USERNAME }}
+        password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
+
+    - name: Build and Push Image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+
+    - name: Install Azure CLI
+      uses: azure/CLI@v1
+
+    - name: Get AKS Credentials
+      run: |
+        az aks get-credentials --resource-group ${{ env.RESOURCE_GROUP }} --name ${{ env.AKS_CLUSTER_NAME }} --overwrite-existing
+
+    - name: Deploy to AKS
+      run: |
+        kubectl apply -f deployment.yml
+        kubectl apply -f service.yml
+```
 
 
 
