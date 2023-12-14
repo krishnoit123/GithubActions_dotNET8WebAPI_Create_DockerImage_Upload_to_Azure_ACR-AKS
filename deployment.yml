@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: webapplication1
-        image: luiscoco/webapplication1:latest  # Replace with your image path
+        image: mycontainerazure1974.azurecr.io/webapplication1:latest  # Replace with your image path
         ports:
         - containerPort: 8080
