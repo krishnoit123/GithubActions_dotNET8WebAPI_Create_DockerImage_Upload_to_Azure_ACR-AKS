@@ -187,6 +187,29 @@ If you don't have the necessary permissions, you might need to ask your Azure ad
 
 For instance, being assigned the "**Contributor**" role at the resource group or resource level would typically suffice for these operations.
 
+We go to Visual Studio and we right click on the project and select the option **Open in Terminal**
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/78743392-8971-4bdb-93c6-61581a8d3d32)
+
+In the Terminal window we confirm we are in the folder where are located the Kubernetes manifest files (deployment.yml and service.yml)
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/801364dc-aa3f-4b3e-8f94-642d61f68067)
+
+Then we open in another window Azure Portal and navigate to Azure AKS service and select the **Overview->Connect** menu option
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/3257a09f-61ec-48d5-8b62-d93668d3e99e)
+
+Then we copy the commands and login in our Azure AKS:
+
+```
+az account set --subscription XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+```
+az aks get-credentials --resource-group myRG --name mydotnet8webapiakscluster
+```
+
+
 
 
 ## 7. Verify the application endpoints
