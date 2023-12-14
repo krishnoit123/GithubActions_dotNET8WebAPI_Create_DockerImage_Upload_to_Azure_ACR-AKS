@@ -34,11 +34,11 @@ jobs:
         context: .
         file: ./Dockerfile  # Path to your Dockerfile
         push: true
-        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest        
     - name: Install Azure CLI
-      uses: azure/CLI@v1
-
+      run: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+    
     - name: Get AKS Credentials
       uses: azure/CLI@v1
       with:
