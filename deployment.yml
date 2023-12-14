@@ -1,0 +1,19 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapplication1-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webapplication1
+  template:
+    metadata:
+      labels:
+        app: webapplication1
+    spec:
+      containers:
+      - name: webapplication1
+        image: luiscoco/webapplication1:latest  # Replace with your image path
+        ports:
+        - containerPort: 8080
