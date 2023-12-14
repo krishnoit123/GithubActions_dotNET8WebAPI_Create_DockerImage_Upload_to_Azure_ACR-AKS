@@ -75,6 +75,19 @@ spec:
 
 ## 3. Create Azure Container Registry ACR service for storing your Docker image
 
+First, with Azure CLI, we create a new ResourceGroup in France Central region 
+
+```
+az group create --name myRG --location francecentral
+```
+
+Then we create the new Azure Container Registry ACR named "mycontainerazure1974"
+```
+az acr create --name mycontainerazure1974 --resource-group myRG --sku Basic --location francecentral
+```
+
+
+
 
 
 ## 4. Create the Github Actions Workflow
