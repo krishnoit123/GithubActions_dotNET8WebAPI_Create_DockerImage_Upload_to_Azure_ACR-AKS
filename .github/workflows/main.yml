@@ -34,4 +34,19 @@ jobs:
         push: true
         tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
-    # Additional steps for deployment or other actions can be added here.
+    - name: Install Azure CLI
+      uses: azure/CLI@v1
+
+    - name: Get AKS Credentials
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az aks get-credentials --resource-group ${{ env.RESOURCE_GROUP }} --name ${{ env.AKS_CLUSTER_NAME }} --overwrite-existing
+
+    - name: Deploy to AKS
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          kubectl apply -f deployment.yml
+          kubectl apply -f service.yml
+
