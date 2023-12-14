@@ -49,7 +49,7 @@ Do not forget to add the Kubernetes manifest files in your application: **deploy
     spec:
       containers:
       - name: webapplication1
-        image: luiscoco/webapplication1:latest  # Replace with your image path
+        image: mycontainerazure1974.azurecr.io/webapplication1:latest  # Replace with your image path
         ports:
         - containerPort: 8080
 ```
@@ -123,7 +123,7 @@ on:
 
 env:
   REGISTRY: mycontainerazure1974.azurecr.io  # Your Azure Container Registry
-  IMAGE_NAME: my-dotnet-api  # Replace with your image name
+  IMAGE_NAME: webapplication1  # Replace with your image name
 
 jobs:
   build_and_push:
