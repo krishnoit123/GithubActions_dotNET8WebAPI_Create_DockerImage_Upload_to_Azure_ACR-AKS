@@ -2,9 +2,9 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ main ]  # or any other branch you want to trigger on
+    branches: [ master ]  # or any other branch you want to trigger on
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 env:
   REGISTRY: mycontainerazure1974.azurecr.io  # Your Azure Container Registry
