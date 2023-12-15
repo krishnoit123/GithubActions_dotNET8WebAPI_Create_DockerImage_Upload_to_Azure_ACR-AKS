@@ -153,7 +153,7 @@ In the Github repo we click on the "**Actions**" button to add a new workflow
 
 ![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/95b3ec50-1a62-46bf-86fa-989b3d9b3fb1)
 
-We input the workflow **main.yml** file source code 
+We input the workflow **main.yml** file source code and press the "**Commit changes...**"
 
 ![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/7e0ef95a-f1c0-4619-8da1-336277632607)
 
