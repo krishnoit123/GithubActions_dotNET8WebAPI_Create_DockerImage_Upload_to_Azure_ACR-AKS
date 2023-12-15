@@ -62,6 +62,10 @@ ENTRYPOINT ["dotnet", "WebApplication1.dll"]
 
 Do not forget to add the Kubernetes manifest files in your application: **deployment.yml** and **service.yml** 
 
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/bcb46d2c-07f7-46fd-9f20-9db117cce57b)
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/7e842fb1-96cc-4587-a8ee-8c6692ab15c4)
+
 **deployment.yml**
 
 ```yaml
@@ -79,6 +83,12 @@ Do not forget to add the Kubernetes manifest files in your application: **deploy
         ports:
         - containerPort: 8080
 ```
+
+We also add the service.yml file
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/9095d4be-24e7-426f-ae18-da15f918f47b)
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/fe244a46-b36f-4309-bce3-3d793e358188)
 
 **sevice.yml**
 
