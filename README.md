@@ -2,7 +2,19 @@
 
 ## 1. Create a .NET 8 Web API in Visual Studio Community Edition
 
-Do not forget to Enable Docker support for automatically create the **Dockerfile** when creating the application
+We run Visual Studio 2022 and we select the menu option "Create a new Project"
+
+We select the ASP.NET Core Web API project template
+
+We set the project name and location
+
+We select the project main features (.NET 8 Framework, Configure HTTPS, Enable Docker and Docker Operating System Linux)
+
+We press the create button
+
+Here is the new .NET 8 Web API folders structure
+
+**IMPORTANT NOTE**: Do not forget to **Enable Docker** support for automatically create the **Dockerfile** when creating the application
 
 **Dockerfile**
 
@@ -92,7 +104,7 @@ We set Admin User in our new Azure ACR
 
 We copy the username and the password to store both values in Gihub repository secrets.
 
-## 4. Create the Github repository secrets
+## 4. Create the Github repository secrets (Docker Hub username and password)
 
 We nagivate to the Setting menu option in our Github repository
 
