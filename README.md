@@ -108,6 +108,9 @@ spec:
 
 ## 2. Create a Github repository in Visual Studio 2022 an upload the .NET 8 Web API source code
 
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/833c1ed0-3842-4ce7-b0ed-42173fda38c3)
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/b1ffc69d-5831-4f45-b628-84da179ddf84)
 
 ## 3. Create Azure Container Registry ACR service for storing your Docker image
 
