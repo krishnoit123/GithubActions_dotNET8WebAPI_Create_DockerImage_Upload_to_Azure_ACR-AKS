@@ -4,9 +4,15 @@
 
 We run Visual Studio 2022 and we select the menu option "Create a new Project"
 
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/a6989376-dc18-4536-98d2-f06f2a90c96f)
+
 We select the ASP.NET Core Web API project template
 
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/a86c1ccc-e0de-4062-b3a3-9ea8eab01239)
+
 We set the project name and location
+
+
 
 We select the project main features (.NET 8 Framework, Configure HTTPS, Enable Docker and Docker Operating System Linux)
 
