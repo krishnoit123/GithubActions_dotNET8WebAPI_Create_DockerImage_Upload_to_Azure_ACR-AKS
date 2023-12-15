@@ -12,13 +12,17 @@ We select the ASP.NET Core Web API project template
 
 We set the project name and location
 
-
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/559b20d3-fb19-425f-939c-f91de47d0e5e)
 
 We select the project main features (.NET 8 Framework, Configure HTTPS, Enable Docker and Docker Operating System Linux)
 
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/9994dd17-9b45-45e3-86d7-c9a034e603cf)
+
 We press the create button
 
-Here is the new .NET 8 Web API folders structure
+Here is the new .NET 8 Web API folders structure and start the **Docker Desktop** as requested in the message
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/3895a21e-86e9-4063-bec4-c33611c48542)
 
 **IMPORTANT NOTE**: Do not forget to **Enable Docker** support for automatically create the **Dockerfile** when creating the application
 
