@@ -24,7 +24,11 @@ Here is the new .NET 8 Web API folders structure and start the **Docker Desktop*
 
 ![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/3895a21e-86e9-4063-bec4-c33611c48542)
 
-**IMPORTANT NOTE**: Do not forget to **Enable Docker** support for automatically create the **Dockerfile** when creating the application
+As you can see in the following picture we created a **Dockerfile** when creating the application
+
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/477a1dd0-1bdf-4cf4-a518-47d6bf7e05a6)
+
+This is the Dockerfile source code
 
 **Dockerfile**
 
