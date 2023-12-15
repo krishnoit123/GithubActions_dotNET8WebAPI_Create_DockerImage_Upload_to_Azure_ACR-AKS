@@ -155,6 +155,8 @@ In the Github repo we click on the "**Actions**" button to add a new workflow
 
 We input the workflow **main.yml** file source code 
 
+![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/7e0ef95a-f1c0-4619-8da1-336277632607)
+
 ```yaml
 name: Build and Push Docker Image
 
@@ -194,8 +196,6 @@ jobs:
 
     # Additional steps for deployment or other actions can be added here.
 ```
-
-![image](https://github.com/luiscoco/GithubActions_Create_DockerImage_Upload_to_Azure_ACR_dotNET8WebAPI/assets/32194879/7e0ef95a-f1c0-4619-8da1-336277632607)
 
 We verify the workflow is running ok
 
