@@ -1,4 +1,4 @@
-# GithubActions: How to create .NET 8 Web API Docker image and Upload it to Azure Container Registry (ACR)
+# GithubActions: How to create .NET 8 Web API Docker image, upload to Azure Container Registry (ACR) and deploy to Azure Kubernetes (AKS)
 
 ## 1. Create a .NET 8 Web API in Visual Studio Community Edition
 
