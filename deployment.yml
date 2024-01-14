@@ -7,6 +7,12 @@ spec:
   selector:
     matchLabels:
       app: webapplication1
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   template:
     metadata:
       labels:
@@ -14,6 +20,7 @@ spec:
     spec:
       containers:
       - name: webapplication1
+        imagePullPolicy: Always
         image: mycontainerazure1974.azurecr.io/webapplication1:latest  # Replace with your image path
         ports:
         - containerPort: 8080
