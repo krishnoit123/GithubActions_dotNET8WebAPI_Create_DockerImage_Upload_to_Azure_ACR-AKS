@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [ master ]
 
-
 env:
   REGISTRY: mycontainerazure1974.azurecr.io
   IMAGE_NAME: webapplication1
