@@ -6,15 +6,16 @@ on:
   pull_request:
     branches: [ master ]
 
-env:
-  REGISTRY: mycontainerazure1974.azurecr.io
-  IMAGE_NAME: webapplication1
-  RESOURCE_GROUP: myRG
-  AKS_CLUSTER_NAME: mydotnet8webapiakscluster
+#env:
+ # REGISTRY: mycontainerazure1974.azurecr.io
+ # IMAGE_NAME: webapplication1
+ # RESOURCE_GROUP: myRG
+ # AKS_CLUSTER_NAME: mydotnet8webapiakscluster
 
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
     - uses: actions/checkout@v2
 
